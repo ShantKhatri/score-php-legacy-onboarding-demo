@@ -1,0 +1,13 @@
+# Generated files
+.score-*
+compose.yaml
+
+# PHP
+vendor/
+
+# Docker build cache artifacts
+*.tar
+
+# OS
+.DS_Store
+Thumbs.db
