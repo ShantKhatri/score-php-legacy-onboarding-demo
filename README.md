@@ -1,5 +1,7 @@
 # score-php-legacy-onboarding-demo
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ShantKhatri/score-php-legacy-onboarding-demo)
+
 A reference example for the Score community: onboarding an **existing, unmodified** PHP application onto Score via a build-time config shim.
 
 A Developer authors and maintains their files in the [`app/src`](./app/src/) folder, their [`Dockerfile`](docker/Dockerfile) and the [`score.yaml`](score.yaml) file.
