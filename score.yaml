@@ -1,0 +1,32 @@
+apiVersion: score.dev/v1b1
+
+metadata:
+  name: legacy-guestbook
+  annotations:
+    score.dev/description: >-
+      An unmodified PHP + MySQL guestbook onboarded onto Score through a
+      config-templating entrypoint shim.
+
+containers:
+  app:
+    image: legacy-guestbook:latest
+    variables:
+      DB_HOST: "${resources.db.host}"
+      DB_PORT: "${resources.db.port}"
+      DB_NAME: "${resources.db.name}"
+      DB_USER: "${resources.db.username}"
+      DB_PASSWORD: "${resources.db.password}"
+    readinessProbe:
+      httpGet:
+        path: /index.php
+        port: 80
+
+service:
+  ports:
+    http:
+      port: 8080
+      targetPort: 80
+
+resources:
+  db:
+    type: mysql
